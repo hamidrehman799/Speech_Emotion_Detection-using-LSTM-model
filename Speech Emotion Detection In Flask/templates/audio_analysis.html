@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Emotion Recognizer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/d3/d3.js"></script>
+  <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgba(57,64,128,255); height: 45px;">
+ 
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" htype="button" value="Back" href="http://127.0.0.1:5000/">Home</a>
+    </li>
+  </ul>
+
+  
+</nav>
+{% block body %}
+<div class="col12">
+<br>
+
+<div style="margin: 0 auto 0 auto; width: 60%; text-align: center;">
+  <br>
+  <br>
+  <div class="row">
+    <h2 style="margin: 0 auto 0 auto; width: 100%; text-align: center; color: white;">Perceived Emotions</h2>
+    
+   <div>
+    <br>
+    <br>
+     <div class="legend1" style="margin: 0 auto 0 auto; width: 60%; text-align: center;">
+     <div class="legend1"> <p class="country-name" style="color: white;"><span class="key-dot you"></span>Your Prediction Graph</p> </div>
+     </div>
+     <div class="col13">
+       <div style=" text-align: center;" id="audio_emotions_dist"></div>
+   </div>
+  </div>
+   <div class="column" align="center">
+       <br>
+       <br>
+       <br>
+     </div>
+   </div>
+   <br>
+   <div style="margin: 0 auto 0 auto; width: 100%; text-align: center;">
+    <ul align="center" style="margin: 0 auto 0 auto; text-decoration: none; list-style: none; width: 100%;">
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F621</p></li>
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F62C</p></li>
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F628</p></li>
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F60a</p></li>
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F607</p></li>
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F614</p></li>
+      <li style=" float: left; text-decoration: none;  font-size: 80px; width: 14.2857142857%;"><p>&#x1F632</p></li>
+    </ul>
+    </div>
+  <div style="margin: 0 auto 0 auto; width: 100%; text-align: center;">
+    <br>
+    <br>
+    <ul align="center" style="margin: 0 auto 0 20px; text-decoration: none; list-style: none; width: 100%;">
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[0]}}%</p></li>
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[1]}}%</p></li>
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[2]}}%</p></li>
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[3]}}%</p></li>
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[4]}}%</p></li>
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[5]}}%</p></li>
+     <li style=" float: left; text-decoration: none;  font-size: 40px; width: 14.2857142857%; color: white;"><p>{{prob[6]}}%</p></li>
+    </ul>
+    <br>
+    <br>
+  </div>
+  <div style="margin: 0 auto 0 auto; width: 100%; text-align: center;">
+    <br>
+    <br>
+    <br>
+<p style="margin: 0 auto 0 auto; width: 30%; text-align: center; color: white;">Your emotion is <b>{{emo}}</b></p>
+<br>
+    <br>
+    <br>
+<p style="color: white;"> Created By Hamid Rehman And Muhammad Danish </p>
+  </div>
+ 
+   <script type="text/javascript" src="static/js/hist_aud.js"></script>
+   <script type="text/javascript" src="static/js/hist_aud_other.js"></script>
+ 
+
+<br>
+</div>  
+
+</div>
+ 
+       {% endblock %}  
+
+</body>
+</html>
